@@ -1,0 +1,37 @@
+.TeamsHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
+.TeamsWelcome {
+    padding-top: 2%;
+}
+
+.TeamsButtons {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: center;
+    padding-bottom: 1%;
+    border-bottom: 2px solid black;
+}
+
+.TeamsButtons > button {
+    font-size: 1em;
+    padding: 1%;
+    border-radius: 3%;
+    background-color: transparent;
+    border: none;
+    transition-duration: 0.5s;
+}
+
+.TeamsButtons > button:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+.TeamsButtons >button:active {
+    background-color: rgb(0, 0, 0, 0.3);
+    transition-duration: 0.1s;
+}
