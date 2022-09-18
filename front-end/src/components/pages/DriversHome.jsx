@@ -1,7 +1,9 @@
 const DriversHome = () => {
 
     return (
-        <h1>Welcome to the driver's page!</h1>
+        <div>
+            <h1>Welcome to the Driver's page!</h1>
+        </div>
     )
 
 };
