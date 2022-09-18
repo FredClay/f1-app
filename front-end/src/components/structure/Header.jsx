@@ -12,8 +12,9 @@ const Header = () => {
                 <p>EVERYTHING F1</p>
             </div>
             <div className={style.HeaderButtons}>
-                <button type='button' onClick={() => navi('/notFound')}>Testing</button>
+                <button type='button' onClick={() => navi('/teamsHome')}>Teams</button>
                 <button type='button' onClick={() => navi('/driversHome')}>Drivers</button>
+                <button type='button' onClick={() => navi('/historyHome')}>F1 History</button>
             </div>
         </div>
     )
