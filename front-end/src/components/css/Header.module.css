@@ -1,3 +1,53 @@
 .AppHeader {
-    color: red;
+    display: flex;
+    flex-direction: row;
+    background-color: darkslategrey;
+    height: 20vh;
+    padding: 5px;
+    align-items: center;
+    border-bottom: 10px solid black;
+    box-shadow: 0px 10px 8px #888888;
+    z-index: 100;
+}
+
+.AppLogo {
+    width: 50%;
+    float: left;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: aliceblue;
+    font-size: 500%;
+    font-weight: 500;
+    border-right: 3px solid aliceblue;
+    text-align: center;
+}
+
+.AppLogo > p {
+    margin: 0px;
+}
+
+.AppLogo > p:hover {
+    cursor: pointer;
+}
+
+.HeaderButtons {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.HeaderButtons > button {
+    font-size: 2em;
+    color: aliceblue;
+    background-color: transparent;
+    border: transparent;
+    padding: 2%;
+    border-radius: 10%;
+}
+
+.HeaderButtons > button:hover {
+
+    background-color: rgb(0, 0, 0, 0.3);
 }
