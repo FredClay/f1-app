@@ -1,0 +1,12 @@
+.TeamCard {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    border-radius: 10px;
+    border: 5px solid black;
+    margin: 2%;
+    width: 20%;
+    color: aliceblue;
+    font-size: 1.1em;
+    align-items: center;
+}

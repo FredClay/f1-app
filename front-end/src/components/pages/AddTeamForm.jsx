@@ -1,23 +1,43 @@
 import style from '../css/BasicForm.module.css';
 
 import { useState } from "react";
+import axios from 'axios';
 
 const AddTeamForm = () => {
 
+    const [teamCreated, setTeamCreated] = useState(false);
     const [nameInput, setNameInput] = useState('');
     const [nationInput, setNationInput] = useState('');
-    const [pricipalInput, setPricipalInput] = useState('');
-    const [yearFounded, setYearFounded] = useState(null);
-    const [wdcs, setWdcs] = useState(null);
-    const [wccs, setWccs] = useState(null);
+    const [principalInput, setPrincipalInput] = useState('');
+    const [yearFounded, setYearFounded] = useState(1900);
+    const [wdcs, setWdcs] = useState(0);
+    const [wccs, setWccs] = useState(0);
 
     const submitHandler = (event) => {
         event.preventDefault();
-    }
+        
+        const bodyToPost = {
+            name: nameInput,
+            nation: nationInput,
+            teamPrincipal: principalInput,
+            yearFounded: yearFounded,
+            wdcs: wdcs,
+            wccs: wccs
+        }
+        
+        axios
+            .post('http://localhost:5000/teams/addNewTeam', bodyToPost)
+            .then(res => {
+                console.log(res);
+                setTeamCreated(true);
+            })
+            .catch(err => console.log(err));
+    };
 
     return (
         <div className={style.FormArea}>
-            <form onSubmit={(event) => submitHandler(event)} className={style.StandardForm}>
+            {(!teamCreated) ? 
+            <form className={style.StandardForm}>
                 <div className={style.LargeFields}>
                     <div className={style.StandardField}>
                         <label htmlFor="nameInput">Team Name</label>
@@ -32,7 +52,7 @@ const AddTeamForm = () => {
                 <div className={style.MiniFields}>
                     <div className={style.MiniField}>
                         <label htmlFor='pricipalInput'>Team Pricipal</label>
-                        <input type="text" id="pricipalInput" placeholder='E.g Toto Wolff' value={pricipalInput} onChange={(e) => setPricipalInput(e.target.value)}/>
+                        <input type="text" id="pricipalInput" placeholder='E.g Toto Wolff' value={principalInput} onChange={(e) => setPrincipalInput(e.target.value)}/>
                     </div>
                     <div className={style.MiniField}>
                         <label htmlFor='wdcInput'>WDC Total</label>
@@ -44,12 +64,12 @@ const AddTeamForm = () => {
                     </div>
                     <div className={style.MiniField}>
                         <label htmlFor='yearFoundedInput'>Year Founded</label>
-                        <input type="number" id="yearFoundedInput" placeholder='~' min="1950" value={yearFounded} onChange={(e) => setYearFounded(e.target.value)}/>
+                        <input type="number" id="yearFoundedInput" placeholder='~' min="1900" value={yearFounded} onChange={(e) => setYearFounded(e.target.value)}/>
                     </div>
                 </div>
 
-                    <button type='submit' className={style.FormButton} onClick={() => submitHandler()}>Add This Team!</button>
-            </form>
+                    <button type='button' className={style.FormButton} onClick={(event) => submitHandler(event)}>Add This Team!</button>
+            </form> : <p>{nameInput} has been added to the database.</p>}
         </div>
     )
 
