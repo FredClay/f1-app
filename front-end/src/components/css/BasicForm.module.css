@@ -1,0 +1,97 @@
+.FormArea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.StandardForm {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 7px solid darkslategrey;
+    background-color: rgb(8, 33, 62);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    width: 80%;
+    color: aliceblue;
+    box-shadow: 0px 0px 10px aliceblue inset;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.FormButton {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    background-color: goldenrod;    
+    width: 25%;
+    font-size: 1em;
+    padding: 1%;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.FormButton:hover {
+    box-shadow: 0px 0px 4px black inset;
+}
+
+.FormButton:active {
+    background-color: gold;
+}
+
+.LargeFields {
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px dashed aliceblue;
+}
+
+.StandardField {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+
+.StandardField > input {
+    color: black;
+    font-size: 0.7em;
+    text-align: center;
+    padding: 2%;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+}
+
+.StandardField > input:focus {
+    box-shadow: 0px 0px 10px inset;
+}
+
+.StandardField > label {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.MiniFields {
+    display: flex;
+    justify-content: center;
+}
+
+.MiniField {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+
+.MiniField > input {
+    font-size: 0.6em;
+    padding: 2%;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.MiniField > input:focus {
+    box-shadow: 0px 0px 10px inset;
+}
+
+.MiniField > label {
+    font-weight: 200;
+}
