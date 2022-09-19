@@ -1,7 +1,7 @@
 import style from '../css/TeamsHome.module.css';
 
 import { useState } from "react";
-import AddTeamsPage from "./AddTeamPage";
+import AddTeamForm from "./AddTeamForm";
 import SearchTeamsForm from './SearchTeamsForm';
 
 const TeamsHome = () => {
@@ -11,7 +11,7 @@ const TeamsHome = () => {
     const renderSwitch = (renderState) => {
         switch(renderState) {
             case 'teamAdd':
-                return <AddTeamsPage />;
+                return <AddTeamForm />;
             case 'teamSearch':
                 return <SearchTeamsForm />;
             default:
@@ -28,7 +28,7 @@ const TeamsHome = () => {
                 <button type="button" onClick={() => setDisplayTopic('teamAdd')}>Add a Team</button>
                 <button type="button" onClick={() => setDisplayTopic('teamSearch')}>Search for a Team</button>
             </div>
-            <div>
+            <div className={style.RenderArea}>
                 {renderSwitch(displayTopic)}
             </div>
         </div>

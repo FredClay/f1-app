@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const SearchTeamsFrom = () => {
+const SearchTeamsForm = () => {
 
     const [searchInput, setSearchInput] = useState('');
     
@@ -8,11 +8,11 @@ const SearchTeamsFrom = () => {
         <div>
             <form>
                 <label htmlFor="teamsSearchInput">Team Name: </label>
-                <input type="text" id="teamsSearchInput" onChange={(e) => setSearchInput(e.target.value)} />
+                <input type="text" id="teamsSearchInput" onChange={(e) => setSearchInput(e.target.value)} value={searchInput}/>
             </form>
         </div>
     )
 
 };
 
-export default SearchTeamsFrom;
+export default SearchTeamsForm;
