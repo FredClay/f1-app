@@ -11,8 +11,16 @@ router.post('/addNewTeam', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('getAllTeams', (req, res, next) => {
+router.get('/getAllTeams', (req, res, next) => {
     Team.find({})
+        .then((results) => res.status(200).json(results))
+        .catch((err) => next(err));
+});
+
+router.get('/getSpecificTeams/:searchFill', (req, res, next) => {
+    const { searchFill } = req.params;
+    
+    Team.find({ name: searchFill/i })
         .then((results) => res.status(200).json(results))
         .catch((err) => next(err));
 });

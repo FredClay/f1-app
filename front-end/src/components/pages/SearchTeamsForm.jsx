@@ -10,6 +10,11 @@ const SearchTeamsForm = () => {
 
     const [searchInput, setSearchInput] = useState('');
     const [foundTeams, setFoundTeams] = useState([]);
+    const [tempTeams, setTempTeams] = useState([]);
+    
+    const submitHandler = (event) => {
+        event.preventDefault();
+    }
     
     useEffect(() => {
         axios
@@ -20,14 +25,26 @@ const SearchTeamsForm = () => {
             .catch(err => console.log(err));
     }, []);
 
+    useEffect(()=> {
+        let matchArray = [];
+        const formattedSearch = searchInput.toLowerCase();
+        
+        for (const team of foundTeams) {
+            if (team.name.toLowerCase().includes(formattedSearch)) {
+                matchArray.push(team);
+            };
+        };
+        setTempTeams(matchArray);
+    }, [searchInput, foundTeams]);
+
     return (
         <div className={style.OutputContainer}>
-            <form>
+            <form onSubmit={(e) => submitHandler(e)}>
                 <label htmlFor="teamsSearchInput">Team Name: </label>
                 <input type="text" id="teamsSearchInput" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
             </form>
             <div className={style.OutputArea}>
-                {(foundTeams) && foundTeams.map((team) => <TeamPrinter key={team._id} team={team} />)}
+                {(tempTeams) && tempTeams.map((team) => <TeamPrinter key={team._id} team={team} />)}
             </div>
         </div>
     );
