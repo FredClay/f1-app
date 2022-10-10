@@ -25,19 +25,23 @@ const TeamSchema = new Schema({
     teamPrincipal: {
         type: String,
         default: 'None Provided',
+        required: true,
     },
     wdcs: {
         type: Number,
         min: 0,
+        required: true,
     },
     wccs: {
         type: Number,
         min: 0,
+        required: true,
     },
     yearFounded: {
         type: Number,
         min: 1950,
         max: new Date().getFullYear(),
+        required: true,
     }
 });
 
