@@ -9,6 +9,7 @@ import NotFound from './components/pages/NotFound';
 import Footer from './components/structure/Footer';
 import Header from './components/structure/Header';
 import HistoryHome from './components/pages/HistoryHome';
+import TeamInfo from './components/pages/TeamInfo';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path='/driversHome' element={<DriversHome />} />
             <Route path='/teamsHome' element={<TeamsHome />} />
             <Route path='/historyHome' element={<HistoryHome />} />
+            <Route path='/teamInfo/:name' element={<TeamInfo />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
         </div>

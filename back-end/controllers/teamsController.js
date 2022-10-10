@@ -17,10 +17,10 @@ router.get('/getAllTeams', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/getSpecificTeams/:searchFill', (req, res, next) => {
-    const { searchFill } = req.params;
+router.get('/getSpecificTeam/:name', (req, res, next) => {
+    const { name } = req.params;
     
-    Team.find({ name: searchFill/i })
+    Team.find({ name: name })
         .then((results) => res.status(200).json(results))
         .catch((err) => next(err));
 });
