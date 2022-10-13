@@ -1,6 +1,7 @@
 .AppHeader {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     background-color: rgb(8, 33, 62);
     height: 20vh;
     padding: 5px;
@@ -11,7 +12,7 @@
 }
 
 .AppLogo {
-    width: 50%;
+    width: 45%;
     float: left;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: aliceblue;
@@ -19,7 +20,7 @@
     font-weight: 500;
     border-right: 3px solid aliceblue;
     text-align: center;
-    padding-right: 2%;
+    padding-right: 1%;
 }
 
 .AppLogo > p {
@@ -36,11 +37,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .HeaderButtons > button {
-    font-size: 2em;
+    font-size: 2rem;
     color: aliceblue;
     background-color: transparent;
     border: transparent;

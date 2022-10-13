@@ -16,7 +16,9 @@ const TeamsHome = () => {
             case 'teamSearch':
                 return <SearchTeamsForm />;
             default:
-                return <></>;
+                return <>
+                    <p>Select one of the options above.</p>
+                </>;
         }
     };
 
