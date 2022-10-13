@@ -2,14 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const dotenv = require('dotenv');
-dotenv.config({path: './config.env'});
-
-mongoose.connect(`${process.env.MONGOPREFIX}${process.env.USER}:${process.env.PW}${process.env.MONGOSUFFIX}`, { useNewUrlParser: true}, (err) => {
-    if (err) return console.log(err);
-    return console.log('Connection Successful!');
-});
-
 // Team Model
 const TeamSchema = new Schema({
     name: {
@@ -47,4 +39,4 @@ const TeamSchema = new Schema({
 
 const Team = mongoose.model('teams', TeamSchema);
 
-module.exports = { Team };
+module.exports = Team;

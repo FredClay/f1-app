@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Team } = require('../dbModels');
+const Team  = require('../models/teamsModel');
 
 router.post('/addNewTeam', (req, res, next) => {
     if (!req.body || Object.keys(req.body).length < 2 || 
