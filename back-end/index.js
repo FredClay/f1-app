@@ -20,6 +20,9 @@ app.use(bodyParser.json());
 const teamRoutes = require('./controllers/teamsController');
 app.use('/teams', teamRoutes);
 
+const driverRoutes = require('./controllers/driversController');
+app.use('/drivers', driverRoutes);
+
 const userRoutes = require('./controllers/userController');
 app.use('/users', userRoutes);
 
