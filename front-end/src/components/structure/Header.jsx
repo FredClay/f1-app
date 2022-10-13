@@ -15,6 +15,7 @@ const Header = () => {
                 <button type='button' onClick={() => navi('/teamsHome')}>Teams</button>
                 <button type='button' onClick={() => navi('/driversHome')}>Drivers</button>
                 <button type='button' onClick={() => navi('/historyHome')}>F1 History</button>
+                <button type='button' onClick={() => navi('/admin')}>Admin</button>
             </div>
         </div>
     )

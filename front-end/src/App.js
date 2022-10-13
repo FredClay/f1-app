@@ -10,8 +10,10 @@ import Footer from './components/structure/Footer';
 import Header from './components/structure/Header';
 import HistoryHome from './components/pages/HistoryHome';
 import TeamInfo from './components/pages/TeamInfo';
+import AdminLogin from './components/pages/AdminLogin';
 
 function App() {
+  
   return (
     <BrowserRouter>
       <div className="App">
@@ -19,6 +21,7 @@ function App() {
         <div className='AppBody'>
           <Routes>
             <Route path='/' element={<HomePage />} />
+            <Route path='/admin' element={<AdminLogin />} />
             <Route path='/driversHome' element={<DriversHome />} />
             <Route path='/teamsHome' element={<TeamsHome />} />
             <Route path='/historyHome' element={<HistoryHome />} />

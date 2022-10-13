@@ -20,7 +20,15 @@ const SearchTeamsForm = () => {
         axios
             .get('http://localhost:5000/teams/getAllTeams')
             .then(res => {
-                setFoundTeams(res.data);
+                let quickArray = res.data;
+                quickArray.sort((a, b) => {
+                    if (a.name < b.name)
+                      return -1;
+                    if (a.name > b.name)
+                      return 1;
+                    return 0;
+                  });
+                setFoundTeams(quickArray);
             })
             .catch(err => console.log(err));
     }, []);
@@ -40,8 +48,8 @@ const SearchTeamsForm = () => {
     return (
         <div className={style.OutputContainer}>
             <form onSubmit={(e) => submitHandler(e)}>
-                <label htmlFor="teamsSearchInput">Team Name: </label>
-                <input type="text" id="teamsSearchInput" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+                <input className={style.SearchField} type="text" id="teamsSearchInput" placeholder='Search Teams...' maxLength='16'
+                    value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
             </form>
             <div className={style.OutputArea}>
                 {(tempTeams) && tempTeams.map((team) => <TeamPrinter key={team._id} team={team} />)}
